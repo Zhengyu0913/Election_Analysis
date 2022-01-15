@@ -10,7 +10,8 @@ import os
 
 
 # Open the election results and read the file.
-with open('election_results.csv') as election_data:
-
-    # Print the file object.
-     print(election_data)
+file_to_load = os.path.join("Resources", "election_results.csv")
+with open(file_to_load) as election_data:
+    file_reader = csv.reader(election_data)
+    for row in file_reader:
+        print(row)
